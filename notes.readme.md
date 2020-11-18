@@ -67,3 +67,10 @@ Domain lib ( three folders ):
 Swagger, can spit off typescript definition
 
 Poczytać: Backend For Frontend
+
+https://www.npmjs.com/package/@angular-architects/ddd
+
+- nx vs code extension
+
+-- schematics for creating schematics:
+https://nx.dev/latest/angular/plugins/nx-plugin/overview
