@@ -1,3 +1,6 @@
+Exercises:
+http://workshops.angulararchitects.io/ms/f9bc9634-a993-4ab0-acd1-926fe8a4064d/index.html
+
 monorepos, communication between components/libs:
 
 tight connection, like hand and fingers
@@ -74,3 +77,27 @@ https://www.npmjs.com/package/@angular-architects/ddd
 
 -- schematics for creating schematics:
 https://nx.dev/latest/angular/plugins/nx-plugin/overview
+
+Distributed cache:
+
+npm install @apployees-nx/level-task-runner -D
+npm install mongodown -D
+Configure @apployees-nx/level-task-runner in nx.json
+
+nx-json:
+
+"tasksRunnerOptions": {
+"default": {
+"runner": "@apployees-nx/level-task-runner",
+"options": {
+"cacheableOperations": ["build", "test", "lint", "e2e"],
+"levelTaskRunnerOptions": {
+"driver": "mongodown",
+"host": "127.0.0.1",
+"port": 27017,
+"name": "cache",
+"collection": "nx-cache"
+}
+}
+}
+},
