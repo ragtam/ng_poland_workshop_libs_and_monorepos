@@ -12,3 +12,58 @@ https://marketplace.visualstudio.com/items?itemName=cyrilletuzi.angular-schemati
 https://marketplace.visualstudio.com/items?itemName=sjuulwijnia.kx-vscode-angular-context-creator
 
 https://marketplace.visualstudio.com/items?itemName=Angular.ng-template
+
+strategic design => decomposing a system
+tactical design => design patterns
+
+Shared Krenel vs Open/Host module
+
+Enterprise monorepo patterns: tinyurl.com/y2jjxld7
+
+Libraries type:
+
+- Smart Components ( know about use case )
+- Dumb Components ( have no idea about use case)
+- Domain Library ( some calculations on client, for instance: if this opt is set, this cannot be activated )
+- Utitlity libs, just technical
+
+Booking domain
+Feature
+Dumb Components (ui)
+Domain
+Util
+
+Boarding domain
+Feature
+Dumb Components
+Domain
+Util
+
+Shared ( Common Property )
+Feature
+Dumb Components
+Domain
+Util
+
+Booking domain can talk only to itself, elements down, ie feature, ui, domain, util and SHARED
+
+But shared kernel has a disadvantage:
+
+- gets messy
+- grows big ( and in this case domain cutting makes no sense, since everything is coupled)
+
+But we can use Open/Host module, domains are exposing API, that is used in some other module
+
+Facade: a service for a specific (one) use case
+
+Hexagonal Architecture, Clear Atrchitecture ( onion )
+
+Domain lib ( three folders ):
+
+- Application
+- Domain model
+- Infrastucture
+
+Swagger, can spit off typescript definition
+
+Poczytać: Backend For Frontend
